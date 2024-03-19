@@ -20,7 +20,6 @@ export const UserContextProvider = ({children}) => {
       }
     }
     catch (e) {
-      console.error(e);
     }
     finally {
       setLoading(false);
@@ -53,7 +52,6 @@ export const UserContextProvider = ({children}) => {
       setUser({...NO_USER});
     }
     catch (e) {
-      console.error(e);
     }
     finally {
       await checkCredentials();
