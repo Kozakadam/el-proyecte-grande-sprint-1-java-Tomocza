@@ -41,7 +41,7 @@ async function copyQuiz(quizId) {
   return await httpRes.json();
 }
 
-async function deleteQuizById(quizId) {
+export async function deleteQuizById(quizId) {
   const httpRes = await fetch(`/api/quiz/${quizId}`, {
     method: "DELETE"
   });
