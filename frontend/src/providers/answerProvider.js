@@ -58,8 +58,8 @@ export async function magicalAnswerUpdate(answersToDelete, answersToUpdate, answ
   return resAll.map((res) => res.json());
 }
 
-module.exports = {
-  saveAnswerList,
-  deleteAnswerList,
-  magicalAnswerUpdate
-};
+// module.exports = {
+//   saveAnswerList,
+//   deleteAnswerList,
+//   magicalAnswerUpdate
+// };

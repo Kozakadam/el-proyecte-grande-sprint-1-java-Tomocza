@@ -75,16 +75,16 @@ export async function updateQuestion(taskId, task) {
   });
   return await res.json();
 }
-
-module.exports = {
-  // fetchTask: fetchTaskByIndex,
-  // fetchTasksByQuizId,
-  // fetchDetailedTasksByQuizId,
-  // fetchTaskById,
-  // saveTask,
-  deleteTaskById,
-  // updateTask,
-  fetchDetailedTaskById,
-  saveQuestion,
-  updateQuestion
-};
+//
+// module.exports = {
+//   // fetchTask: fetchTaskByIndex,
+//   // fetchTasksByQuizId,
+//   // fetchDetailedTasksByQuizId,
+//   // fetchTaskById,
+//   // saveTask,
+//   deleteTaskById,
+//   // updateTask,
+//   fetchDetailedTaskById,
+//   saveQuestion,
+//   updateQuestion
+// };

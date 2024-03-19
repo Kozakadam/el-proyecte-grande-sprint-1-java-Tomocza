@@ -32,10 +32,10 @@ export async function userLogout() {
   });
   return res.json();
 }
-
-module.exports = {
-  userRegister,
-  userLogin,
-  getCredentials,
-  userLogout
-};
+//
+// module.exports = {
+//   userRegister,
+//   userLogin,
+//   getCredentials,
+//   userLogout
+// };

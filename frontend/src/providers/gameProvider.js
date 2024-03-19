@@ -42,10 +42,10 @@ export async function getQuizByGameId(gameId) {
   return await httpRes.json();
 }
 
-module.exports = {
-  createGameLobby,
-  joinToGameLobby,
-  handleAnswerSubmit,
-  getGameList,
-  getQuizByGameId
-};
+// module.exports = {
+//   createGameLobby,
+//   joinToGameLobby,
+//   handleAnswerSubmit,
+//   getGameList,
+//   getQuizByGameId
+// };

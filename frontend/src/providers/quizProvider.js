@@ -53,13 +53,13 @@ export async function fetchModifiedAtById(quizId) {
   return await httpRes.json();
 }
 
-module.exports = {
-  updateQuizName,
-  fetchQuizById,
-  fetchAllQuizzes,
-  fetchMyQuizzes,
-  saveEmptyQuiz,
-  copyQuiz,
-  deleteQuizById,
-  fetchModifiedAtById
-};
+// module.exports = {
+//   updateQuizName,
+//   fetchQuizById,
+//   fetchAllQuizzes,
+//   fetchMyQuizzes,
+//   saveEmptyQuiz,
+//   copyQuiz,
+//   deleteQuizById,
+//   fetchModifiedAtById
+// };
