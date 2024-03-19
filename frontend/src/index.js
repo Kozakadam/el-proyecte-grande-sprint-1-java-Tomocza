@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, createHashRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import "./index.css";
 
@@ -24,7 +24,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 
-const router = createBrowserRouter([{
+const router = createHashRouter([{
   path: "/",
   children: [
     {
