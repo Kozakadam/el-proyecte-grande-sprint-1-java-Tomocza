@@ -1,9 +1,9 @@
-async function createGameLobby(quizId) {
+export async function createGameLobby(quizId) {
   const httpRes = await fetch(`/api/game/create/${quizId}`);
   return await httpRes.json();
 }
 
-async function joinToGameLobby(gameId, playerName) {
+export async function joinToGameLobby(gameId, playerName) {
   const httpRes = await fetch(`/api/game/join/${gameId}`, {
     method: "POST",
     body: JSON.stringify({playerName}),
@@ -14,12 +14,12 @@ async function joinToGameLobby(gameId, playerName) {
   return await httpRes.json();
 }
 
-async function getNextTask(gameId) {
+export async function getNextTask(gameId) {
   const httpRes = await fetch(`/api/game/nextTask/${gameId}`);
   return await httpRes.json();
 }
 
-async function handleAnswerSubmit(gameId, answer) {
+export async function handleAnswerSubmit(gameId, answer) {
   console.log(answer);
   const httpRawRes = await fetch(`/api/game/submit/${gameId}?answer=${answer.answerId}`, {
     method: "PATCH",
@@ -27,17 +27,17 @@ async function handleAnswerSubmit(gameId, answer) {
   return await httpRawRes.json();
 }
 
-async function getGameResult(gameId) {
+export async function getGameResult(gameId) {
   const httpRes = await fetch(`/api/game/result/${gameId}`);
   return await httpRes.json();
 }
 
-async function getGameList() {
+export async function getGameList() {
   const httpRes = await fetch(`/api/game/list`);
   return await httpRes.json();
 }
 
-async function getQuizByGameId(gameId) {
+export async function getQuizByGameId(gameId) {
   const httpRes = await fetch(`/api/game/quiz/${gameId}`);
   return await httpRes.json();
 }

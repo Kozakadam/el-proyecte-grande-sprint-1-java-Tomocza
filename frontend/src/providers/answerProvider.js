@@ -3,7 +3,7 @@
 //   return await httpRawRes.json();
 // }
 
-async function saveAnswer(taskId, answer) {
+export async function saveAnswer(taskId, answer) {
   return await fetch(`/api/answer/task/${taskId}`, {
     method: "POST",
     body: JSON.stringify(answer),
@@ -13,7 +13,7 @@ async function saveAnswer(taskId, answer) {
   });
 }
 
-async function saveAnswerList(taskId, answerList) {
+export async function saveAnswerList(taskId, answerList) {
   const promises = answerList.map(async (answer) => {
     return (await saveAnswer(taskId, answer));
   });
@@ -21,7 +21,7 @@ async function saveAnswerList(taskId, answerList) {
   return resAll.map((res) => res.json());
 }
 
-async function deleteAnswerById(answerId) {
+export async function deleteAnswerById(answerId) {
   return await fetch(`/api/answer/${answerId}`, {
     method: "DELETE", headers: {
       "Content-Type": "application/json"
@@ -29,7 +29,7 @@ async function deleteAnswerById(answerId) {
   });
 }
 
-async function deleteAnswerList(answerList) {
+export async function deleteAnswerList(answerList) {
   const promises = answerList.map(async (answer) => {
     return (await deleteAnswerById(answer.answerId));
   });
@@ -37,7 +37,7 @@ async function deleteAnswerList(answerList) {
   return resAll.map((res) => res.json());
 }
 
-async function updateAnswer(answer) {
+export async function updateAnswer(answer) {
   return await fetch(`/api/answer/update/${answer.answerId}`, {
     method: "PATCH",
     body: JSON.stringify(answer),
@@ -47,7 +47,7 @@ async function updateAnswer(answer) {
   });
 }
 
-async function magicalAnswerUpdate(answersToDelete, answersToUpdate, answersToSave, taskId) {
+export async function magicalAnswerUpdate(answersToDelete, answersToUpdate, answersToSave, taskId) {
   const promises = [
     ...answersToDelete.map(async (answer) => await deleteAnswerById(answer.answerId)),
     ...answersToUpdate.map(async (answer) => await updateAnswer(answer)),
