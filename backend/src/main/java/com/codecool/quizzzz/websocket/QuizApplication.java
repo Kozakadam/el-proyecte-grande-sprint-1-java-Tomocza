@@ -23,8 +23,4 @@ public class QuizApplication {
     config.setPort(port);
     return new SocketIOServer(config);
   }
-
-  public static void main(String[] args) {
-    SpringApplication.run(QuizApplication.class, args);
-  }
 }
