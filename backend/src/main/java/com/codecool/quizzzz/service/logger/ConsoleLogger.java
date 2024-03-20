@@ -7,10 +7,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.time.LocalDateTime;
 
-
-public class FileLogger implements Logger {
-  private final String FILE_PATH = System.getenv("LOG_PATH");
-
+@Service
+public class ConsoleLogger implements Logger{
   @Override
   public void logError(String content) {
     log(content, "ERROR");
@@ -32,13 +30,6 @@ public class FileLogger implements Logger {
   }
 
   private void log(String content, String type) {
-    try {
-      PrintWriter writer = new PrintWriter(new FileWriter(FILE_PATH, true));
-      writer.println(String.format("[%s]: [%s] \n%s\n", LocalDateTime.now(), type, content));
-      writer.close();
-    }
-    catch (IOException e) {
-      System.out.println(e);
-    }
+    System.out.println((String.format("[%s]: [%s] \n%s\n", LocalDateTime.now(), type, content)));
   }
 }

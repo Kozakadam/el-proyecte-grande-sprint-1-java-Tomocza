@@ -36,3 +36,6 @@ build/
 
 ### LOG ###
 /src/log/
+
+###Misc###
+.env
