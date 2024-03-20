@@ -59,7 +59,7 @@ public class WebSecurityConfig {
                                            .requestMatchers("api/game/**")
                                            .permitAll()
                                            .anyRequest()
-                                           .permitAll());
+                                           .authenticated());
 //            .authorizeHttpRequests(auth -> auth.requestMatchers("/**").permitAll());
     http.authenticationProvider(authenticationProvider());
     http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
