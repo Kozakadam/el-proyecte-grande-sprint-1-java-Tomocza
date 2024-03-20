@@ -47,7 +47,7 @@ public class WebSecurityConfig {
                                            .requestMatchers("api/user/register")
                                            .permitAll()
                                            .requestMatchers("api/user/credentials")
-                                           .permitAll()
+                                           .hasRole("USER")
                                            .requestMatchers("api/user/logout")
                                            .hasRole("USER")
                                            .requestMatchers("api/quiz/**")
@@ -58,11 +58,8 @@ public class WebSecurityConfig {
                                            .hasRole("USER")
                                            .requestMatchers("api/game/**")
                                            .permitAll()
-//                                           .hasAnyRole("USER", "GUEST")
-//                                           .requestMatchers("socket.io/**")
-//                                           .hasAnyRole("USER", "GUEST")
                                            .anyRequest()
-                                           .authenticated());
+                                           .permitAll());
 //            .authorizeHttpRequests(auth -> auth.requestMatchers("/**").permitAll());
     http.authenticationProvider(authenticationProvider());
     http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
