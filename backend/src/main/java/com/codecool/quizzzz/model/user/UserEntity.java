@@ -26,6 +26,7 @@ public class UserEntity {
   private String email;
   private String password;
   @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER) // TODO: change cascade
+  @Enumerated(EnumType.STRING)
   private Set<Role> roles;
   @OneToMany(mappedBy = "creator", cascade = CascadeType.ALL)
   private Set<Quiz> quizzes;
